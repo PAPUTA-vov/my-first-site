@@ -1,0 +1,24 @@
+# Интернет-аптека «Жить здорово»
+
+Веб-приложение для продажи лекарственных средств с каталогом, корзиной, оформлением заказов и административной панелью.
+
+## Технологии
+
+- **Backend**: Node.js + Express.js
+- **Database**: MongoDB + Mongoose
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Auth**: JWT
+
+## Установка и запуск
+
+### 1. Установите MongoDB
+
+Скачайте и установите MongoDB с официального сайта: https://www.mongodb.com/try/download/community
+
+Запустите службу MongoDB:
+```bash
+# Windows
+net start MongoDB
+
+# macOS/Linux
+sudo systemctl start mongod

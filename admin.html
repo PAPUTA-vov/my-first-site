@@ -1,0 +1,49 @@
+const mongoose = require('mongoose');
+
+const productSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    substance: {
+        type: String, // действующее вещество
+        required: true
+    },
+    category: {
+        type: String,
+        required: true,
+        enum: ['antibiotic', 'painkiller', 'vitamin', 'antiviral', 'other']
+    },
+    price: {
+        type: Number,
+        required: true,
+        min: 0
+    },
+    stock: {
+        type: Number,
+        required: true,
+        min: 0,
+        default: 0
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    instructions: {
+        type: String,
+        required: true
+    },
+    image: {
+        type: String,
+        default: '/uploads/default.jpg'
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+// Индекс для поиска
+productSchema.index({ name: 'text', substance: 'text' });
+
+module.exports = mongoose.model('Product', productSchema);
